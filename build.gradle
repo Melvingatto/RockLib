@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.147'
+}
+
+group = 'net.melvin'
+version = '0.1.1'
+base.archivesName = 'rock-tool-library'
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+tasks.named('jar', Jar).configure {
+    manifest.attributes(
+            'FMLModType': 'GAMELIBRARY',
+            'Automatic-Module-Name': 'net.melvin.rocktool'
+    )
+}
+
+neoForge { version = project.neo_version }
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
