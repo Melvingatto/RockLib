@@ -18,7 +18,7 @@ Download the Rock Tool Library JAR from CurseForge and place it in your mod proj
 
 ```gradle
 dependencies {
-    compileOnly files('libs/RockToolLibrary.jar') // Use the downloaded JAR's actual filename.
+    implementation files('libs/RockToolLibrary.jar') // Use the downloaded JAR's actual filename.
 }
 ```
 
